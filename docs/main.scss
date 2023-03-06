@@ -60,12 +60,14 @@ section {
     // right: 0;
     margin-inline: auto;
     margin-bottom: 0.5rem;
-    width: 50vw;
+    // width: 50vw;
+    max-width: 1000px;
     background-color: #000000d8;
     color: white;
 
     .text-block {
-        column-count: 2;
+        // column-count: 2;
+        column-width: 400px;
         text-align: justify;
     }
 }
@@ -83,10 +85,15 @@ p {
 .action-blocks {
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 1rem;
     // color: black;
-
+    
     .action {
+        flex-basis: 1;
+        flex-grow: auto;
+        max-width: calc(200px - 3rem);
 
         h4 {
             margin-top: -19px;
@@ -108,7 +115,7 @@ p {
         border: 2px solid white;
         // border-bottom: none;
 
-        width: 20rem;
+        // width: 20rem;
 
         // background-color: white;
         margin-top: 0.5rem;

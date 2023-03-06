@@ -53,13 +53,13 @@ section {
   padding-block: 1rem;
   margin-inline: auto;
   margin-bottom: 0.5rem;
-  width: 50vw;
+  max-width: 1000px;
   background-color: rgba(0, 0, 0, 0.8470588235);
   color: white;
 }
 section .text-block {
-  -moz-column-count: 2;
-       column-count: 2;
+  -moz-column-width: 400px;
+       column-width: 400px;
   text-align: justify;
 }
 
@@ -75,12 +75,16 @@ p {
 .action-blocks {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 1rem;
 }
 .action-blocks .action {
+  flex-basis: 1;
+  flex-grow: auto;
+  max-width: calc(200px - 3rem);
   font-size: 12px;
   border: 2px solid white;
-  width: 20rem;
   margin-top: 0.5rem;
   padding: 0.5rem;
 }
