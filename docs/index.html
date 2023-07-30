@@ -21,9 +21,13 @@
                     There are two roles: <em>Player</em> and <em>DM</em>.
                     A player has control over one <em>Character</em>.
                 </p>
-                <p>The DM describes environments and <em>Obstacles</em>, and controls all non-player Characters. An Obstacle can be anything that hinders the player's progress towards their goal: a puzzle, a blocked door, a bouncer, etc.</p>
+                <p>The DM describes environments and <em>Obstacles</em>, and controls all non-player Characters.
+                    An Obstacle can be anything that hinders the player's progress towards their goal: a puzzle,
+                    a blocked door, a bouncer, etc.</p>
                 <p>
-                    A Player has access to a set of cards (called <em>Features</em>) that can represent anything from an innate trait like "super strength" over equipment and training up to abstract concepts like "mafia connections". Players use their Features to overcome Obstacles or perform other Actions.
+                    A Player has access to a set of cards (called <em>Features</em>) that can represent anything from an
+                    innate trait like "super strength" over equipment and training up to abstract concepts like "mafia
+                    connections". Players use their Features to overcome Obstacles or perform other Actions.
                 </p>
             </div>
         </section>
@@ -31,20 +35,27 @@
             <h3>Actions</h3>
             <div class="text-block">
                 <p>
-                    To perform an Action a player draws one card from a shuffeled deck consisting of two types of cards: <em class="suc">Success</em> and <em class="fail">Failure</em>.
-                    If a <em class="suc">Success</em> card is drawn the action succeeds and the obstacle is overcome, if a <em class="fail">Failure</em> is drawn the action fails. (All cards are then returned to their owners)
+                    To perform an Action a player draws cards from a shuffeled deck consisting of three types of cards:
+                    <em class="suc">Success</em>, <em class="dan">Danger</em> and <em class="fail">Failure</em>.
+                    <ul>
+                        <li>If a <em class="suc">Success</em> card is drawn the action succeeds and the obstacle is overcome.</li>
+                        <li>If a <em class="dan">Danger</em> card is drawn the penalty for a failure increases</li>
+                        <li>If a <em class="fail">Failure</em> is drawn the <em class="dan">danger</em> is increased by one, the action fails and the player receives a penalty according to the <em class="dan">danger</em> level</li>
+                    </ul>
+                      (All cards are then returned to their owners)
                 </p>
                 <p>
                     To create a deck, Players adds all their relevant Features as either <em class="suc">Success</em> or
                     <em class="fail">Failure</em> Cards. The DM may force a Player to add a Feature to the deck.
-                    The DM adds a number of their own <em class="fail">Failure</em> Cards equal to the difficulty.
+                    The DM adds a number of their own <em class="fail">Failure</em> and <em class="dan">Danger</em> Cards to represent difficulty and risk.
                 </p>
                 <p>
                     Difficulty is determined based on the manner in which the Player wants to resolve a situation.
                     "I want to break open the door", "I look for a key", and "I try to convince the janitor to open the
                     door for me" may all have different Difficulties.
                     Actions with Difficulty 0 may still <em class="fail">fail</em> due to a <em
-                        class="fail">failure</em> card added by a Player. Some Actions with Difficulty 0 may still be impossible without a certain Feature.
+                        class="fail">failure</em> card added by a Player. Some Actions with Difficulty 0 may still be
+                    impossible without a certain Feature.
                 </p>
                 <p>
                     The owner of the drawn card describes what events occur to perform the action, or why the action
@@ -55,12 +66,11 @@
                 <p>
                     If a Character <em class="fail">fails</em> the DM may do any or all of the following:
                 <ul>
-                    <li>Enable/Disable one of their features. A temporary Feature is removed instead of disabled
-                    </li>
-                    <li>Give them a relevant and mostly negative temporary Feature
-                    </li>
-                    <li>Prevent them and/or other Characters from attempting the same Action again
-                    </li>
+                    <li><em class="dan">1+</em> Prevent them and/or other Characters from attempting the same Action again</li>
+                    <li><em class="dan">2+</em> Give them a relevant and mostly negative temporary Feature</li>
+                    <li><em class="dan">3+</em> Enable/Disable one of their features. A temporary Feature is removed instead of disabled</li>
+                    <li><em class="dan">4+</em> Repeat one of the above</li>
+                    <li><em class="dan">6+</em> Repeat one of the above or <em class="dan">KILL</em> the Character</li>
                 </ul>
                 </p>
             </div>
@@ -75,8 +85,11 @@
                     <h4>Restore|Remove</h4>
                     <span class="desc">Heal an Ally, clean your clothes or restore your Reputation</span>
                     <span class="difficulty"><em>Difficulty:</em> 0 to 6</span>
-                    <em class="suc">Success</em>: Disabled or re-enable a Feature of a willing
-                    character (Temporary Features are removed instead of disabled).
+                    <span>
+                        <em class="suc">Success</em>: Disabled or re-enable a Feature of a willing
+                        character (Temporary Features are removed instead of disabled).
+                    </span>
+                    <span><em class="dan">Penalties</em> may be applied to one or both of the characters involved</span>
                 </div>
                 <div class="action">
                     <h4>Create</h4>
@@ -94,18 +107,36 @@
                     </p>
                 </div>
                 <div class="action">
-                    <h4>Assist | Disturb</h4>
+                    <h4>Assist|Disturb</h4>
                     <span class="desc">Give somebody a lift, hand them your sword or coach them in retoric</span>
                     <p>
                         When another character performs an action you may add one relevant Feature as a <em
-                            class="suc">Success</em>/<em class="fail">Failure</em> card, if that card is drawn you
+                        class="suc">Success</em>/<em class="fail">Failure</em> card, if that card is drawn you
                         describe what happens.
                     </p>
                 </div>
+                <div class="action">
+                    <h4>Protect|Condemn</h4>
+                    <span class="desc">Safe a life or seal their fate</span>
+                    <span class="difficulty"><em>Difficulty:</em> 2 to 6</span>
+                    <p>
+                        Flip another Character's <em class="suc">Success</em> or <em class="fail">Failure</em> no matter this actions outcome.
+                    </p>
+                    <p>This actions <em class="dan">Danger</em> is increased by the <em class="dan">Danger</em> of the original Action.</p>
+                </div>
+                <div class="action">
+                    <h4>Double|Nothing</h4>
+                    <span class="desc">A sudden twist of destiny</span>
+                    <p>Shuffle an additional <em class="fail">Failure</em> and <em class="dan">Danger</em> Card into the remaining deck</span></p>
+                    <p>
+                        Flip your own <em class="fail">Failure</em> if you draw two <em class="suc">Success</em> Cards without drawing a <em class="fail">Failure</em> Card.
+                    </p>
+                    <p>Your <em class="dan">Danger</em> continues to increase during this.</p>
+                </div>
             </div>
-            </div>
-        </section>
-        <section id="progression">
+        </div>
+    </section>
+    <section id="progression">
             <div>
                 <h3>Progression</h3>
                 <div class="text-block">
@@ -114,7 +145,8 @@
                         decide, but 3-5 are reccomended).
                     </p>
                     <p>
-                        After a Session each Player may turn one temporary Feature into a permanent Feature and/or remove
+                        After a Session each Player may turn one temporary Feature into a permanent Feature and/or
+                        remove
                         one of their disabled permanent Features.
                     </p>
                 </div>

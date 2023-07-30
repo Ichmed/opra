@@ -6,7 +6,11 @@ em {
     }
 
     &.fail {
-        color: red;
+        color: rgb(200, 0, 200);
+    }
+
+    &.dan {
+        color: red
     }
 }
 
@@ -91,8 +95,6 @@ p {
     // color: black;
     
     .action {
-        flex-basis: 1;
-        flex-grow: auto;
         max-width: calc(200px - 2rem);
 
         h4 {
