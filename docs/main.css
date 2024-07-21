@@ -2,6 +2,9 @@ em.suc {
   color: green;
 }
 em.fail {
+  color: rgb(200, 0, 200);
+}
+em.dan {
   color: red;
 }
 
@@ -79,8 +82,6 @@ p {
   gap: 1rem;
 }
 .action-blocks .action {
-  flex-basis: 1;
-  flex-grow: auto;
   max-width: calc(200px - 2rem);
   font-size: 12px;
   border: 2px solid white;
